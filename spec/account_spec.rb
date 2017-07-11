@@ -12,4 +12,10 @@ describe Account do
       expect{ account.deposit(100) }.to change{ account.balance }.by(100)
     end
   end
+
+  describe '#withdraw' do
+    it 'Deducts the passed-in amount to the balance' do
+      expect{ account.withdraw(100) }.to change{ account.balance }.by(-100)
+    end
+  end
 end
